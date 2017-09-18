@@ -17,6 +17,7 @@ class Edge_property
     int bike_reverse;
     int foot;
     unsigned int maxspeed;
+    unsigned int lane_number;
     unsigned long long way;
 
     Edge_property();
@@ -42,6 +43,7 @@ struct Edge
     unsigned long long target;
     unsigned long long way;
     unsigned int maxspeed;
+    unsigned int lane_number;
     float length;
     char car;
     char car_d;

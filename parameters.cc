@@ -52,6 +52,7 @@ void Edge_property::reset()
     foot = unknown;
     way = 0;
     maxspeed = 0;
+    lane_number = 0;
 }
 
 void Edge_property::normalize()
@@ -198,6 +199,10 @@ bool Edge_property::update(const std::string & key, const std::string & val)
     else if(key == "maxspeed")
     {
 		maxspeed = atoi(val.c_str());
+    }
+    else if(key == "lanes")
+    {
+        lane_number = atoi(val.c_str());
     }
     return this->accessible();
 }

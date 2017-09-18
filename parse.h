@@ -35,6 +35,7 @@ class Edge_property
     int foot;
     node_t way; // way identifier associated with this edge
     int maxspeed; // maximum speed in [kmh] or [mph]
+    int lane_number; //Number of lanes for each road
 
     Edge_property();
 
@@ -81,6 +82,7 @@ struct Edge
     node_t target;
     node_t way; // way identifier associated with this edge
     int maxspeed; // maximum speed in [kmh] or [mph]
+    int lane_number; // number of lanes for each road
     float length;
     char car;
     char car_d;
@@ -89,8 +91,8 @@ struct Edge
     char foot;
     std::string geom;
     Edge() {}
-    Edge(node_t e, node_t s, node_t t, node_t w, int m, float l, char c, char cd, char b, char bd, char f, const std::string & str) :
-        edge_id(e), source(s), target(t), way(w), maxspeed(m), length(l),
+    Edge(node_t e, node_t s, node_t t, node_t w, int m, int ln, float l, char c, char cd, char b, char bd, char f, const std::string & str) :
+        edge_id(e), source(s), target(t), way(w), maxspeed(m), lane_number(ln), length(l),
         car(c), car_d(cd), bike(b), bike_d(bd), foot(f),
         geom(str)
     {}
